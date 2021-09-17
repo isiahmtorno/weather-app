@@ -5,6 +5,11 @@ import Venue from '../components/venue/Venue';
 
 const ROUTES = [
     {
+        path: '/', redirect: to => {
+            return '/weather-forecast';
+        }
+    },
+    {
         path: '/weather-forecast',
         component: Weather,
         name: 'Wethear Forecast',
