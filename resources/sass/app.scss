@@ -1,0 +1,157 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css');
+
+// Variables
+@import 'variables';
+
+$border-radius: 20px;
+$black: #080705;
+
+body {
+    background-color: #eee;
+    font-family: Poiret One;
+}
+
+.widget {
+    display: flex;
+    height: 300px;
+    width: 600px;
+    flex-wrap: wrap;
+    cursor: pointer;
+    border-radius: $border-radius;
+    box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+
+    .weather-icon {
+        flex: 1 100%;
+        height: 60%;
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+        background: #fafafa;
+        font-family: weathericons;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 100px;
+
+        i{
+            padding-top: 30px;
+        }
+    }
+
+    .weather-info {
+        flex: 0 0 70%;
+        height: 40%;
+        background: $black;
+        border-bottom-left-radius: $border-radius;
+        display: flex;
+        align-items: center;
+        color: white;
+
+        .temperature {
+            flex: 0 0 40%;
+            width: 100%;
+            font-size: 65px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .description {
+            flex: 0 60%;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+
+            .weather-condition {
+                text-transform: uppercase;
+                font-size: 25px;
+                font-weight: 100;
+            }
+
+            .place {
+                font-size: 15px;
+            }
+        }
+    }
+
+    .date {
+        flex: 0 0 30%;
+        height: 40%;
+        background: #70c1b3;
+        border-bottom-right-radius: $border-radius;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: white;
+        font-size: 30px;
+        font-weight: 800;
+    }
+}
+
+.card {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+
+    .card-header {
+        border-radius: 10px 10px 0 0;
+    }
+    .card-body {
+        border-radius: 0 0 10px 10px;
+        background-color: #333;
+        color: white;
+    }
+}
+
+.v-select {
+    width: 300px;
+
+    .vs__search::placeholder, .vs__selected, .vs__dropdown-menu {
+        font-weight: bold;
+    }
+}
+
+.lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+
+    div {
+        display: inline-block;
+        position: absolute;
+        left: 8px;
+        width: 16px;
+        background: #ccc;
+        animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+
+        &:nth-child(1) {
+            left: 8px;
+            animation-delay: -0.24s;
+        }
+
+        &:nth-child(2) {
+            left: 32px;
+            animation-delay: -0.12s;
+        }
+
+        &:nth-child(3) {
+            left: 56px;
+            animation-delay: 0;
+        }
+    }
+}
+
+  @keyframes lds-facebook {
+    0% {
+        top: 8px;
+        height: 64px;
+    }
+
+    50%, 100% {
+        top: 24px;
+        height: 32px;
+    }
+  }
